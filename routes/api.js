@@ -4,8 +4,6 @@ const Workout = require("../models/workout");
 router.get("/api/workouts", (req, res) => {
     Workout.find({})
         .then(dbWorkout => {
-            const lastIndex = dbWorkout.length - 1
-            console.log(dbWorkout[lastIndex]);
             res.json(dbWorkout);
         })
         .catch(err => {
